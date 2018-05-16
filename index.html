@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <!--meta name="viewport" content="width=device-width, initial-scale=1"-->
+
+    <!-- CLEAN MARKUP = GOOD KARMA.
+      Hi source code lover,
+
+      you're a curious person and a fast learner ;)
+      Let's make something beautiful together. Contribute on Github:
+      https://github.com/webslides/webslides
+
+      Thanks!
+      -->
+
+    <!-- SEO -->
+    <title>Salat Time</title>
+    <meta name="description" content="WebSlides is the easiest way to create HTML presentations and landings. 120+ free slides ready to use.">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/permalink"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/svg-icons.css">
+
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/icsb.css">
+    <link href="https://fonts.googleapis.com/css?family=Titan+One|Limelight|Paytone+One|Prosto+One&amp;subset=cyrillic" rel="stylesheet">
+      
+     <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="../static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="../static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="../static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="../static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="../static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="../static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="../static/images/favicons/favicon-192.png">
+    </head>
+  <body ng-app="myApp">
+    <!-- PUT WEBSLIDES PRESENTATION CONTENT HERE -->
+      <article id="webslides" style="background: #005000">
+      <!-- First slide -->
+        <section>
+          <header ng-controller="dateCtrl" class="bg-whit"> 
+            <h1 style="color: aliceblue; font-family: 'Paytone One', sans-serif; font-size: 100px" class="aligncenter text-shadow">
+            {{today | date:'medium'}}</h1> 
+          </header>
+          <div class="wrap" ng-controller="firstRowController">
+            <h1 id="firstline" style="color: aliceblue; font-family: 'Limelight', cursive; font-size: 100px" class="aligncenter text-landing">Salat Time</h1>
+            <ul class="flexblock steps">
+              <!-- li>a? Add blink = <ul class="flexblock steps blink">-->
+              <li>
+                <h1 id="firstline">{{fajren}}</h1>
+                <h1 id="secondline">{{salatconfig.fajr.adhan}}-{{salatconfig.fajr.salat}}</h1>
+              </li>
+              <li>
+                <div class="process step-2"></div>
+                <h1 id="firstline">{{shooruken}}</h1>
+                <h1 id="secondline">{{sunrise}}</h1>
+                <h1 class="aligncenter">+15 Min</h1>
+              </li>
+              <li>
+                <div class="process step-3"></div>
+                <h1 id="firstline">{{duhuren}}</h1>
+                <h1 id="secondline">{{salatconfig.duhr.adhan}}-{{salatconfig.duhr.salat}}</h1>
+             </li>
+              <li>
+                <div class="process step-4"></div>
+                <h1 id="firstline">{{asaren}}</h1>
+                <h1 id="secondline">{{salatconfig.asr.adhan}}-{{salatconfig.asr.salat}}</h1>
+              </li>
+            </ul>
+          </div>
+          <br>
+          <div class="wrap" ng-controller="secondRowController">
+            <ul class="flexblock steps">
+              <!-- li>a? Add blink = <ul class="flexblock steps blink">-->
+              <li>
+                <h1 id="firstline">{{maghriben}}</h1>
+                <h1 id="secondline">{{sunset}}</h1>
+                <h1 class="aligncenter">+7 Min</h1>
+              </li>
+              <li>
+                <div class="process step-2"></div>
+                <h1 id="firstline">{{ishaen}}</h1>
+                <h1 id="secondline">{{salatconfig.isha.adhan}}-{{salatconfig.isha.salat}}</h1>
+              </li>
+              <li>
+                <div class="process step-3"></div>
+                <h1 id="firstline">{{jummah}}</h1>
+                <h1 id="secondline">1:10-1:40</h1>
+              </li>
+              <li >
+                <div class="process step-4"></div>
+                <span>
+                    <img src="static/images/cell.png" style="height: 225px">
+                </span>              
+                </li>
+            </ul>
+          </div>
+           <!-- .end .wrap -->
+          <footer ng-controller="footerCtrl">
+            <h1 style="color: aliceblue; font-family: 'Paytone One', sans-serif; font-size: 100px" class="aligncenter text-shadow">{{getHijriDate(0)}}</h1> 
+          </footer>
+        </section>
+      <!-- Second slide -->
+          <section class="bg-gradient-r aligncenter">
+            <h1>Please be quite and turn of your cellphone !!</h1>
+              <br><br><br>
+            <h1>رَبِّ ٱجْعَلْنِى مُقِيمَ ٱلصَّلَوٰةِ وَمِن ذُرِّيَّتِى ۚ رَبَّنَا وَتَقَبَّلْ دُعَآءِ
+                    <br>My Lord, make me an establisher of prayer, and [many] from my descendants. Our Lord, and accept my supplication. (Qur’an 14:40)
+            </h1>
+          </section>
+        <!-- Third slide -->
+      <!-- etc. -->
+    </article>
+
+    <script src="static/js/webslides.js"></script>
+    <!--script>
+    
+        window.ws = new WebSlides({
+          autoslide: false,
+          changeOnClick: false,
+          loop: true,
+          minWheelDelta: 40,
+          navigateOnScroll: true,
+          scrollWait: 450,
+          slideOffset: 50,
+          showIndex: false
+        }); 
+    </script-->
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script-->
+    <script src="static/js/angular169.js"></script>
+    <script src="static/js/moment.js"></script>
+    <script src="static/js/moment-hijri.js"></script>
+    <script defer src="static/js/svg-icons.js"></script>
+    <script defer src="static/js/config_json.js"></script>
+    <script defer src="static/js/PrayTimes.js"></script>
+    <script defer src="static/js/app.js"></script>
+    <script src="static/js/ngDialog.min.js"></script>
+   </body>
+</html>
