@@ -141,32 +141,43 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
     console.log($window.timeoutscheduled);
     var start;
     $interval.cancel(start);
-    start = $interval(function() 
+    start = $interval(function($scope)
     {
         var hours = new Date().getHours();
 		var minutes = new Date().getMinutes();
+        if (minutes >= 0 && minutes <= 9)
+            minutes = '0'+minutes;
+
 		var currentTime = (hours + ':' + minutes);
-		console.log(currentTime);
+        console.log(currentTime);
+
         if(currentTime == $window.config.fajr.hr || currentTime == $window.config.duhr.hr || currentTime == $window.config.asr.hr || currentTime == $window.config.isha.hr)
         {
-             
-                //var dialog;
-                //dialog = ngDialog.open({
-                //    template: '<h2>Salat is in-progress !, Please be quite and turn of your cellphone !</h2>',
-                //    className: 'ngdialog-theme-default',
-                //    height: 400,
-                //    plain: true
-                //});  
-                //clearInterval(goback);
-                //goback = $interval(function(){
-                //    dialog.closePromise.then(function (data) {
-                //    console.log('ngDialog closed');
-                //    });
-                //    silenceSlide = false;
-                //}, 1000 * 60); 
+
+                var dialog = ngDialog.open({
+                    template: '<h2  style="font-size: 100px;">Salat in progress !!, <br> Please be quite and turn of your cellphone</h2>',
+                    className: 'ngdialog-theme-default',
+                    height: 400,
+                    width: 500,
+                    plain: true,
+                    data: '{"data": "bar"}'
+                });
+
+
+            $timeout(function(){
+                location.reload();
+            }, 1800000);
+                    //var start = new Date().getTime();
+                    //for (var i = 0; i < 1e7; i++) {
+                    //    if ((new Date().getTime() - start) > 5000){
+                    //        dialog.close(dialog.id, '{"data": "bar"}');
+                    //        break;
+                    //    }
+                    //}
         }
     }, 1000 * 60);
 });
+
 
 
 function parseArabic(){ // PERSIAN, ARABIC, URDO
