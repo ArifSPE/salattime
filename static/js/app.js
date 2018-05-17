@@ -1,7 +1,8 @@
 var app = angular.module('myApp', ['ngDialog']);
 
-var changelabelline1=true;
-var changelabelline2=true;
+var changelabelline1 = true;
+var changelabelline2 = true;
+var changemonthlabel = true;
 
 
 app.factory('MyService', function ($window) {
@@ -102,11 +103,12 @@ app.controller ('secondRowController',  function($scope, $window, MyService, $in
     $timeout(changelabel2, $scope.labelchangeinterval2);        
 });
 
-app.controller('footerCtrl', function($scope){
+app.controller('footerCtrl', function($scope,$timeout){
         
     console.log("==============footerCtrl Controller Call=====================");
+    $scope.monthstring= englishHijriDate();
 
-    $scope.getHijriDate = function(adjustment) {
+    $scope.getHijriDate = function() {
         var wdNames = new Array("Ahad","Ithnin","Thulatha","Arbaa","Khams","Jumuah","Sabt");
         var iMonthNames = new Array("Muharram","Safar","Rabi'ul Awwal","Rabi'ul Akhir",
         "Jumadal Ula","Jumadal Akhira","Rajab","Sha'ban",
@@ -117,9 +119,47 @@ app.controller('footerCtrl', function($scope){
         var outputIslamicDate = res[2] + " " + iMonthNames[res[1]-1] + " " + res[0] +" AH";
         return outputIslamicDate;
     };
+
+    $scope.getHijriDateArabic = function(){
+
+            var iMonthNames = new Array("محرم","صفر","ربيع الأول","ربيع الثاني",
+			"جمادى الأولى","جمادى الثانيـة","رجب","شعبان",
+			"رمضان","شوال","ذو القـعدة","ذو الحـــجـــة");
+            var iDate = moment().format('iYYYY/iM/iD');
+        var res = iDate.split("/"); //1439/8/22
+        var outputIslamicDateAr = $scope.parseArabic(res[2]) + " " + iMonthNames[res[1]-1] + " " + $scope.parseArabic(res[0]) ;
+        return outputIslamicDateAr;
+    };
+
+    $scope.parseArabic = function (number) {
+        var englishNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+        var arabicNumbers = ['١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩', '٠'];
+        var numberToString = number.toString();
+
+      for (var i = 0; i < englishNumbers.length; i++) {
+       numberToString = numberToString.replace(new RegExp(englishNumbers[i], 'g'), arabicNumbers[i]);
+      }
+        return numberToString;
+     };
+
+     var changemonthlabel = function() {
+                if(changelabelline2)
+                {
+                    $scope.monthstring = $scope.getHijriDate();
+
+                }
+                else
+                {
+                    $scope.monthstring = $scope.getHijriDateArabic();
+
+                }
+         $timeout(changemonthlabel,10000);
+        };
+
+        $timeout(changemonthlabel,10000);
 });
 
-app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $interval,$timeout, $element, ngDialog) {
+app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $interval,ngDialog) {
     //$scope.today = new Date(); 
     console.log("==============Date Controller Call=====================");
     
@@ -178,13 +218,16 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
     }, 1000 * 60);
 });
 
+function englishHijriDate() {
+        var wdNames = new Array("Ahad","Ithnin","Thulatha","Arbaa","Khams","Jumuah","Sabt");
+        var iMonthNames = new Array("Muharram","Safar","Rabi'ul Awwal","Rabi'ul Akhir",
+        "Jumadal Ula","Jumadal Akhira","Rajab","Sha'ban",
+        "Ramadan","Shawwal","Dhul Qa'ada","Dhul Hijja");
+        //var iDate = kuwaiticalendar(adjustment);
+        var iDate = moment().format('iYYYY/iM/iD');
+        var res = iDate.split("/"); //1439/8/22
+        var outputIslamicDate = res[2] + " " + iMonthNames[res[1]-1] + " " + res[0] +" AH";
+        return outputIslamicDate;
+    }
 
 
-function parseArabic(){ // PERSIAN, ARABIC, URDO
-     var yas ="٠١٢٣٤٥٦٧٨٩";
-     yas = (yas.replace(/[٠١٢٣٤٥٦٧٨٩]/g, function (d) {
-         return d.charCodeAt(0) - 1632;                
-         }).replace(/[۰۱۲۳۴۵۶۷۸۹]/g, function (d) { return d.charCodeAt(0) - 1776; })
-     );
-     alert(yas);
-}
