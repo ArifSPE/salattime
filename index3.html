@@ -6,7 +6,7 @@
 
     <title>Salat Time</title>
 </head>
-<body ng-app="myApp">
+<body id='mainbody' ng-app="myApp" background="static/images/assets/bg3.jpg">
 <table ng-controller="dateCtrl" id="container">
 <tr height="20%">
     <td id="daterow" width="70%" class="topbar">
@@ -23,19 +23,19 @@
                 <td width="25%">
                         <table width="100%" height="100%">
                         <tr>
-                            <td class="righttable">
+                            <td id="salattime1" class="righttable">
                              <p class="salatlabel">{{fajren}}</p>
                              {{adhanArabic}} {{fajrsalattime}} <br>
                              {{iqamahArabic}} {{fajradhan}} <br>
                             </td>
                         </tr>
                         <tr>
-                            <td class="righttable">
+                            <td id="salattime2" class="righttable">
                              <p class="salatlabel">{{shooruken}}</p>  {{sunrise}} <br> +15 Min
                             </td>
                         </tr>
                         <tr>
-                            <td class="righttable">
+                            <td id="salattime3" class="righttable">
                                 <p class="salatlabel">{{duhuren}}</p>
                                 {{adhanArabic}} {{duhursalattime}} <br>
                                 {{iqamahArabic}} {{duhuradhan}} <br>
@@ -43,27 +43,27 @@
                         </tr>
                     </table>
                 </td>
-                <td id="content" width="50%" class="bigtext">
-
+                <td ng-style="newStyle" id="content" width="50%" class="bigtext">
+                        
                 </td>
                 <td width="25%">
                         <table width="100%" height="100%">
                             <tr>
-                                <td class="righttable">
+                                <td id="salattime4" class="righttable">
                                     <p class="salatlabel">{{asaren}}</p>
                                     {{adhanArabic}} {{asrsalattime}} <br>
                                     {{iqamahArabic}} {{asradhan}} <br>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="righttable">
+                                <td id="salattime5" class="righttable">
                                     <p class="salatlabel">{{maghriben}}</p>
                                     {{maghribsalattime}} <br>
                                      +7 Min <br>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="righttable">
+                                <td id="salattime6" class="righttable">
                                     <p class="salatlabel">{{ishaen}}</p>
                                     {{adhanArabic}} {{ishasalattime}} <br>
                                     {{iqamahArabic}} {{ishaadhan}} <br>
@@ -76,6 +76,7 @@
     </td>
 </tr>
 </table>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="static/js/angular14.js"></script>
     <script src="static/js/angular-sanitize.js"></script>
     <script src="static/js/moment.js"></script>
