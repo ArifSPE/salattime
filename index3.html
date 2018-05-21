@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="static/css/icsb1.css" rel="stylesheet">
+
+    <title>Salat Time</title>
+</head>
+<body ng-app="myApp">
+<table ng-controller="dateCtrl" id="container">
+<tr height="20%">
+    <td id="daterow" width="70%" class="topbar">
+        {{monthstring}}
+    </td>
+    <td class="topbar" width="30%" align="right">
+        {{today | date:'HH:MM:ss'}}
+    </td>
+</tr>
+<tr height="80%" width="100%">
+    <td colspan=2>
+        <table width="100%" height="100%">
+            <tr>
+                <td width="25%">
+                        <table width="100%" height="100%">
+                        <tr>
+                            <td class="righttable">
+                             <p class="salatlabel">{{fajren}}</p>
+                             {{adhanArabic}} {{fajrsalattime}} <br>
+                             {{iqamahArabic}} {{fajradhan}} <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="righttable">
+                             <p class="salatlabel">{{shooruken}}</p>  {{sunrise}} <br> +15 Min
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="righttable">
+                                <p class="salatlabel">{{duhuren}}</p>
+                                {{adhanArabic}} {{duhursalattime}} <br>
+                                {{iqamahArabic}} {{duhuradhan}} <br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="content" width="50%" class="bigtext">
+
+                </td>
+                <td width="25%">
+                        <table width="100%" height="100%">
+                            <tr>
+                                <td class="righttable">
+                                    <p class="salatlabel">{{asaren}}</p>
+                                    {{adhanArabic}} {{asrsalattime}} <br>
+                                    {{iqamahArabic}} {{asradhan}} <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="righttable">
+                                    <p class="salatlabel">{{maghriben}}</p>
+                                    {{maghribsalattime}} <br>
+                                     +7 Min <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="righttable">
+                                    <p class="salatlabel">{{ishaen}}</p>
+                                    {{adhanArabic}} {{ishasalattime}} <br>
+                                    {{iqamahArabic}} {{ishaadhan}} <br>
+                                </td>
+                            </tr>
+                        </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+    <script src="static/js/angular14.js"></script>
+    <script src="static/js/angular-sanitize.js"></script>
+    <script src="static/js/moment.js"></script>
+    <script src="static/js/moment-hijri.js"></script>
+    <script defer src="static/js/config_json.js"></script>
+    <script defer src="static/js/PrayTimes.js"></script>
+    <script defer src="static/js/app3.js"></script>
+    <script src="static/js/ngDialog.js"></script>
+</body>
+</html>
+
+
