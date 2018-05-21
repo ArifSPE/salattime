@@ -7,26 +7,50 @@
 	width:1920px;
 	height:1080px;
 	border-spacing:0px;
-    background: #005000;
+    <!--background: #005000;-->
 }
 td.topbar
 {
     border-bottom: 0px solid white;
-    font-size: 150px;
-	color: #dbcbaf;
+    font-size: 140px;
+	color: white;
 }
 
 td.righttable
 {
-    background-color:#01451d;
-	font-size: 85px;
-	color: #dbcbaf;
+	font-size: 80px;
+    font-weight: bolder;
+	color: white;
     text-align: center;
 }
 
+td.righttableblack
+{
+	font-size: 85px;
+    font-weight: bolder;
+	color: #000000;
+    text-align: center;
+}
+
+td.righttablegreen
+{
+	font-size: 85px;
+    font-weight: bolder;
+	color: green;
+    text-align: center;
+}
+
+td.righttableblue
+{
+	font-size: 85px;
+    font-weight: bolder;
+	color: dodgerblue;
+    text-align: center;
+}
+
+
 td.bigtext
 {
-    background-color:#01451d;
 	font-size: 150px;
 	color: #dbcbaf;
     text-align: center;;
