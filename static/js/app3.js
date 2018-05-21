@@ -56,7 +56,6 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
     $scope.iqamahArabic= "Iqamah"
     $scope.jummah = "Jummah Khutbah"
 
-
     $scope.tickInterval = 1000 //ms
 
     var tick = function () {
@@ -120,9 +119,10 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     $scope.maghriben = $scope.salatconfig.maghrib.ar;
                     $scope.ishaen = $scope.salatconfig.isha.ar;
                     $scope.jummah = "جمعة خطبة";
-                    $scope.adhanArabic= "أَذَان";
-                    $scope.iqamahArabic= "إقامة";
-
+                    //$scope.adhanArabic= "أَذَان";
+                    //$scope.iqamahArabic= "إقامة";
+                    
+                /**
                     $scope.fajrsalattime= $scope.parseArabic($scope.salatconfig.fajr.salat);
                     $scope.fajradhan= $scope.parseArabic($scope.salatconfig.fajr.adhan);
                     $scope.duhursalattime= $scope.parseArabic($scope.salatconfig.duhr.salat);
@@ -133,7 +133,7 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     $scope.ishasalattime= $scope.parseArabic($scope.salatconfig.isha.salat);
                     $scope.ishaadhan = $scope.parseArabic($scope.salatconfig.isha.adhan);
                     $scope.sunrise = $scope.parseArabic($scope.sunrise);
-
+                    **/
                     changelabelline++;
 
                 }
@@ -149,7 +149,7 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                         $scope.jummah = "Jummah Khutbah";
                         $scope.adhanArabic= "Adhan";
                         $scope.iqamahArabic= "Iqamah";
-
+                /**
                         $scope.fajrsalattime= $scope.salatconfig.fajr.salat;
                         $scope.fajradhan= $scope.salatconfig.fajr.adhan;
                         $scope.duhursalattime= $scope.salatconfig.duhr.salat;
@@ -163,15 +163,73 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                         $scope.sunrise = sunrisestring.substring(0, sunrisestring.length-3);
                         var sunsetstring = time.maghrib;
                         $scope.maghribsalattime = sunsetstring.substring(0,sunsetstring.length-3);
-
-
-
+                    **/
                         changelabelline = 1;
+                    var targets = angular.element(document).find('body'); 
+                    //alert(targets[0].background);
+                    //allCarets.removeClass('fa-caret-down');
+                    //allCarets.addClass('fa-caret-right');
+                    //var vcomponents =  angular.element('#collapse_vcomponents');
+                    //vcomponents.removeClass('collapse');
+                    //vcomponents.addClass('panel-collapse width in');
+                    //vcomponents.css('width', 'auto');
+                    
                 }
-         $timeout(changemonthlabel,10000);
+                $timeout(changemonthlabel,10000);
         };
 
         $timeout(changemonthlabel,10000);
+    
+        
+        var imageseq = 1;
+        $interval(function(){
+            var img = 'bg'+imageseq;
+            var imagename = 'static/images/assets/'+img+'.jpg'
+            var targets = angular.element(document).find('body'); 
+            targets[0].background=imagename;
+            imageseq++;
+            if(imageseq > 15)
+                imageseq = 1; 
+            
+            var salattd1 = angular.element(document).find('#salattime1');
+            var salattd2 = angular.element(document).find('#salattime2');
+            var salattd3 = angular.element(document).find('#salattime3');
+            var salattd4 = angular.element(document).find('#salattime4');
+            var salattd5 = angular.element(document).find('#salattime5');
+            var salattd6 = angular.element(document).find('#salattime6');
+            
+               
+            //salattd[0].className ='righttableblack ng-binding';
+            if(img == 'bg3')
+            {
+                    salattd1[0].className ='righttablegreen ng-binding';
+                    salattd2[0].className ='righttablegreen ng-binding';
+                    salattd3[0].className ='righttablegreen ng-binding';
+                
+            }
+            else if(img == 'bg4')
+            {
+                    salattd1[0].className ='righttable ng-binding';
+                    salattd2[0].className ='righttable ng-binding';
+                    salattd3[0].className ='righttable ng-binding';
+                    salattd4[0].className ='righttableblue ng-binding';
+                    salattd5[0].className ='righttableblue ng-binding';
+                    salattd6[0].className ='righttableblue ng-binding';
+                    
+            }
+            else
+            {
+                    salattd1[0].className ='righttable ng-binding';
+                    salattd2[0].className ='righttable ng-binding';
+                    salattd3[0].className ='righttable ng-binding';
+                    salattd4[0].className ='righttable ng-binding';
+                    salattd5[0].className ='righttable ng-binding';
+                    salattd6[0].className ='righttable ng-binding';
+                    
+            }
+                
+
+        }, 10000);
 
 });
 
