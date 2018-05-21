@@ -184,6 +184,7 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
         var imageseq = 1;
         $interval(function(){
             var img = 'bg'+imageseq;
+            //alert(img);
             var imagename = 'static/images/assets/'+img+'.jpg'
             var targets = angular.element(document).find('body'); 
             targets[0].background=imagename;
@@ -212,9 +213,9 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     salattd1[0].className ='righttable ng-binding';
                     salattd2[0].className ='righttable ng-binding';
                     salattd3[0].className ='righttable ng-binding';
-                    salattd4[0].className ='righttableblue ng-binding';
-                    salattd5[0].className ='righttableblue ng-binding';
-                    salattd6[0].className ='righttableblue ng-binding';
+                    salattd4[0].className ='righttableblack ng-binding';
+                    salattd5[0].className ='righttableblack ng-binding';
+                    salattd6[0].className ='righttableblack ng-binding';
                     
             }
             else
