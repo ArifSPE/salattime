@@ -218,6 +218,20 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     salattd6[0].className ='righttableblack ng-binding';
                     
             }
+            else if(img == 'bg6')
+            {
+                    salattd1[0].className ='righttableblue ng-binding';
+                    salattd2[0].className ='righttableblue ng-binding';
+                    salattd3[0].className ='righttableblue ng-binding';
+                    salattd4[0].className ='righttableblue ng-binding';
+                    salattd5[0].className ='righttableblue ng-binding';
+                    salattd6[0].className ='righttableblue ng-binding';
+            }
+            else if(img == 'bg9')
+            {
+                    salattd1[0].className ='righttableblue ng-binding';
+                    salattd4[0].className ='righttableblue ng-binding';
+            }
             else
             {
                     salattd1[0].className ='righttable ng-binding';
