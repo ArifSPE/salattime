@@ -9,11 +9,11 @@
 <body id='mainbody' ng-app="myApp" background="static/images/assets/bg1.jpg">
 <table ng-controller="dateCtrl" id="container">
 <tr height="20%">
-    <td id="daterow" width="70%" class="topbar">
+    <td id="datecell" width="70%" class="topbar">
         {{monthstring}}
     </td>
-    <td class="topbar" width="30%" align="right">
-        {{today | date:'HH:MM:ss'}}
+    <td id="timecell" class="topbar" width="30%" align="right">
+        {{today | date:'hh:mm:ss'}}
     </td>
 </tr>
 <tr height="80%" width="100%">

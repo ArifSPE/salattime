@@ -187,6 +187,10 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
             //alert(img);
             var imagename = 'static/images/assets/'+img+'.jpg'
             var targets = angular.element(document).find('body'); 
+            var datecell = angular.element(document).find('#datecell');
+            var timecell = angular.element(document).find('#timecell');
+
+
             targets[0].background=imagename;
             imageseq++;
             if(imageseq > 15)
@@ -226,11 +230,44 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     salattd4[0].className ='righttableblue ng-binding';
                     salattd5[0].className ='righttableblue ng-binding';
                     salattd6[0].className ='righttableblue ng-binding';
+                    timecell[0].className = 'topbarblue ng-binding';
+                    datecell[0].className = 'topbarblue ng-binding';
+            }
+            else if(img == 'bg7')
+            {
+                    timecell[0].className = 'topbarbrown ng-binding';
+                    datecell[0].className = 'topbarbrown ng-binding';
+                    salattd1[0].className ='righttable ng-binding';
+                    salattd2[0].className ='righttable ng-binding';
+                    salattd3[0].className ='righttable ng-binding';
+                    salattd4[0].className ='righttable ng-binding';
+                    salattd5[0].className ='righttable ng-binding';
+                    salattd6[0].className ='righttable ng-binding';
+
             }
             else if(img == 'bg9')
             {
+
                     salattd1[0].className ='righttableblue ng-binding';
                     salattd4[0].className ='righttableblue ng-binding';
+            }
+            else if(img == 'bg12')
+            {
+                    salattd1[0].className ='righttablebrown ng-binding';
+                    salattd2[0].className ='righttablebrown ng-binding';
+                    salattd3[0].className ='righttablebrown ng-binding';
+                    salattd4[0].className ='righttablebrown ng-binding';
+                    salattd5[0].className ='righttablebrown ng-binding';
+                    salattd6[0].className ='righttablebrown ng-binding';
+                       }
+
+            else if(img == 'bg14')
+            {
+                    salattd1[0].className ='righttablered ng-binding';
+                    salattd2[0].className ='righttablered ng-binding';
+                    salattd4[0].className ='righttablered ng-binding';
+                    salattd5[0].className ='righttablered ng-binding';
+
             }
             else
             {
@@ -240,6 +277,9 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     salattd4[0].className ='righttable ng-binding';
                     salattd5[0].className ='righttable ng-binding';
                     salattd6[0].className ='righttable ng-binding';
+                    timecell[0].className = 'topbar ng-binding';
+                    datecell[0].className = 'topbar  ng-binding';
+
                     
             }
                 

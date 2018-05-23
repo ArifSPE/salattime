@@ -9,6 +9,7 @@
 	border-spacing:0px;
     <!--background: #005000;-->
 }
+
 td.topbar
 {
     border-bottom: 0px solid white;
@@ -16,6 +17,23 @@ td.topbar
     font-weight: bolder;
 	color: white;
 }
+
+td.topbarblue
+{
+    border-bottom: 0px solid white;
+    font-size: 140px;
+    font-weight: bolder;
+    color: dodgerblue;
+}
+
+td.topbarbrown
+{
+    border-bottom: 0px solid white;
+    font-size: 140px;
+    font-weight: bolder;
+    color: saddlebrown;
+}
+
 
 td.righttable
 {
@@ -47,6 +65,22 @@ td.righttableblue
 	font-size: 85px;
     font-weight: bolder;
 	color: dodgerblue;
+    text-align: center;
+}
+
+td.righttablered
+{
+	font-size: 85px;
+    font-weight: bolder;
+	color: red;
+    text-align: center;
+}
+
+td.righttablebrown
+{
+	font-size: 85px;
+    font-weight: bolder;
+	color: saddlebrown;
     text-align: center;
 }
 
