@@ -18,7 +18,7 @@ app.factory('MyService', function ($window) {
   }
 });
 
-app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $interval,ngDialog) {
+app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $interval, $sce) {
     //$scope.today = new Date();
     console.log("==============Date Controller Call=====================");
     $scope.salatconfig = $window.config;
@@ -50,7 +50,7 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
     $scope.ishaen = $scope.salatconfig.isha.en;
     $scope.ishasalattime= $scope.salatconfig.isha.salat;
     $scope.ishaadhan = $scope.salatconfig.isha.adhan;
-
+    //$scope.myHTML=''
 
     $scope.adhanArabic= "Adhan"
     $scope.iqamahArabic= "Iqamah"
@@ -285,6 +285,29 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                 
 
         }, 10000);
+    
+    var start = $interval(function($scope)
+    {
+        var hours = new Date().getHours();
+		var minutes = new Date().getMinutes();
+        if (minutes >= 0 && minutes <= 9)
+            minutes = '0'+minutes;
+
+		var currentTime = (hours + ':' + minutes);
+        console.log(currentTime);
+
+        if(currentTime == $window.config.fajr.hr || currentTime == $window.config.duhr.hr || currentTime == $window.config.asr.hr || currentTime == $window.config.isha.hr)
+        {
+            var contentcell = angular.element(document).find('#content');
+            contentcell[0].innerHTML = '<p class="salatlabel">Attention !!!</p><p class="attention">Iqamam is in progres !</p>'+
+                '<img src="static/images/cell.png" height="150" width="150">';
+            
+            $timeout(function(){
+                    var contentcell = angular.element(document).find('#content');
+                contentcell[0].innerHTML='';
+            }, 1800000);
+        }
+    }, 1000 * 60);
 
 });
 
