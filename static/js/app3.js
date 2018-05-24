@@ -243,7 +243,7 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
             }
                 
 
-        }, 1000 * 300);
+        }, 300000);
     
     var slidenumber = 1;
     var jummahSalat = $interval(function($scope){
