@@ -97,7 +97,8 @@ td.bigtext
 {
 	font-size: 150px;
 	color: #dbcbaf;
-    text-align: center;;
+    text-align: center;
+    vertical-align: top;
 }
 
 
@@ -126,6 +127,7 @@ p.salatlabel1 {
     background-color: white;
 	opacity: .7;
 	color: black;
+    font-weight: bolder;    
 }
 
 

@@ -246,26 +246,84 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
         }, 300000);
     
     var slidenumber = 1;
+    var nextSalatNumber = 1;
     var jummahSalat = $interval(function($scope){
             var contentcell = angular.element(document).find('#content');
         var html='';
         if(slidenumber == 1)
         {    
-            html = '<p class="salatlabel1">Jummah</p>'+'<p class="salatlabel1">Adhan:'+$window.jummah.adhan+'</p><p class="salatlabel1">Khutbah:'+$window.jummah.khutbah+'</p><p class="salatlabel1">Khateeb '+$window.jummah.khateebh+'</p';
+            html = '<p class="salatlabel1">Jummah</p>'+'<p class="salatlabel1">Adhan:'+$window.jummah.adhan+'</p><p class="salatlabel1">Khutbah:'+$window.jummah.khutbah+'</p><p class="salatlabel1">Khateeb '+$window.jummah.khateebh+'</p>';
             slidenumber++
+        }
+        else if(slidenumber==2)
+        {
+            html = '<p class="salatlabel">Attention !!!</p><img src="static/images/cell2.png" height="625px">';
+            slidenumber++;
         }
         else
         {
-            html = '<p class="salatlabel">Attention !!!</p><img src="static/images/cell2.png" height="625px">';
-            slidenumber = 1;
+                    var hours = new Date().getHours();
+		            var minutes = new Date().getMinutes();
+                    if (minutes >= 0 && minutes <= 9)
+                        minutes = '0'+minutes;
+
+                    var currentTime = (hours + ':' + minutes);
+                    console.log(currentTime);
+                    if(currentTime>$window.config.fajr.hr  && currentTime <= $window.config.duhr.hr)
+                    {
+                        nextSalatNumber = 2;
+                    }
+                    if(currentTime > $window.config.duhr.hr && currentTime <= $window.config.asr.hr)
+                    {
+                        nextSalatNumber = 3;
+                    }
+                    if(currentTime > $window.config.asr.hr && currentTime < $scope.maghribsalattime)
+                    {
+                        nextSalatNumber = 4;    
+                    }
+                    if(currentTime > $scope.maghribsalattime && currentTime < $window.config.isha.hr)
+                    {
+                        nextSalatNumber = 5;
+                    }
+                    if(currentTime > $window.config.isha.hr)
+                    {
+                        nextSalatNumber = 1;    
+                    }
+                    
+                    console.log(nextSalatNumber);
+            
+                    if(nextSalatNumber == 1)
+                    {
+                        html = '<p class="salatlabel1"> Next:'+$window.config.fajr.en+'</p>'+'<p class="salatlabel1">Adhan:'+$window.config.fajr.adhan+'</p><p class="salatlabel1">Iqamah:'+$window.config.fajr.salat+'</p>'; 
+                    }
+                    if(nextSalatNumber == 2)
+                    {
+                    html = '<p class="salatlabel1"> Next:'+$window.config.duhr.en+'</p>'+'<p class="salatlabel1">Adhan:'+$window.config.duhr.adhan+'</p><p class="salatlabel1">Iqamah:'+$window.config.duhr.salat+'</p>'; 
+                    }
+                    if(nextSalatNumber == 3)
+                    {
+                        html = '<p class="salatlabel1"> Next:'+$window.config.asr.en+'</p>'+'<p class="salatlabel1">Adhan:'+$window.config.asr.adhan+'</p><p class="salatlabel1">Iqamah:'+$window.config.asr.salat+'</p>'; 
+                    }
+                    if(nextSalatNumber== 4)
+                    {
+                        var time = MyService.calculateTimes($window);
+                        var sunsetstring = time.maghrib;
+                        var maghribsalattime = sunsetstring.substring(0,sunsetstring.length-3);
+                        html = '<p class="salatlabel1">Next:'+$window.config.maghrib.en+'</p>'+'<p class="salatlabel1">Adhan:'+maghribsalattime+'</p><p class="salatlabel1">Iqamah: +7 Min</p>'; 
+                    }
+                    if(nextSalatNumber==5)
+                    {
+                        html = '<p class="salatlabel1"> Next:'+$window.config.isha.en+'</p>'+'<p class="salatlabel1">Adhan:'+$window.config.isha.adhan+'</p><p class="salatlabel1">Iqamah:'+$window.config.isha.salat+'</p>'; 
+                    }
+            slidenumber=1;
         }
             contentcell[0].innerHTML = html;
              $timeout(function(){
                     var contentcell = angular.element(document).find('#content');
                 contentcell[0].innerHTML='';
-            }, 1000 * 30);
+            }, 500 * 30);
         
-    }, 1000 * 60);
+    }, 1000 * 30);
     
     var start = $interval(function($scope)
     {
