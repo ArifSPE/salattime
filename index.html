@@ -51,8 +51,11 @@
       <!-- First slide -->
         <section>
           <header ng-controller="dateCtrl" class="bg-whit"> 
-            <h1 style="color: aliceblue; font-family: 'Paytone One', sans-serif; font-size: 100px" class="aligncenter text-shadow">
-            {{today | date:'medium'}}</h1> 
+            <h1 style="color: aliceblue; font-family: 'Paytone One', sans-serif; font-size: 100px" class="alignleft text-shadow">
+            {{today | date:'MMM dd yyyy'}}</h1> 
+            <h1 style="color: aliceblue; font-family: 'Paytone One', sans-serif; font-size: 100px" class="alignright text-shadow">
+            {{today | date:'hh:mm:ss'}}</h1> 
+      
           </header>
           <div class="wrap" ng-controller="firstRowController">
             <h1 id="firstline" style="color: aliceblue; font-family: 'Limelight', cursive; font-size: 100px" class="aligncenter text-landing">Salat Time</h1>
