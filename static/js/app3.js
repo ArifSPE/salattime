@@ -193,7 +193,7 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
 
             targets[0].background=imagename;
             imageseq++;
-            if(imageseq > 15)
+            if(imageseq == 9)
                 imageseq = 1; 
             
             var salattd1 = angular.element(document).find('#salattime1');
@@ -210,30 +210,15 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     salattd1[0].className ='righttablegreen ng-binding';
                     salattd2[0].className ='righttablegreen ng-binding';
                     salattd3[0].className ='righttablegreen ng-binding';
+                    salattd4[0].className ='righttablegreen ng-binding';
+                    salattd5[0].className ='righttablegreen ng-binding';
+                    salattd6[0].className ='righttablegreen ng-binding';
+                    timecell[0].className = 'topbargreen ng-binding';
+                    datecell[0].className = 'topbargreen  ng-binding';
+
                 
             }
-            else if(img == 'bg4')
-            {
-                    salattd1[0].className ='righttable ng-binding';
-                    salattd2[0].className ='righttable ng-binding';
-                    salattd3[0].className ='righttable ng-binding';
-                    salattd4[0].className ='righttableblack ng-binding';
-                    salattd5[0].className ='righttableblack ng-binding';
-                    salattd6[0].className ='righttableblack ng-binding';
-                    
-            }
-            else if(img == 'bg6')
-            {
-                    salattd1[0].className ='righttableblue ng-binding';
-                    salattd2[0].className ='righttableblue ng-binding';
-                    salattd3[0].className ='righttableblue ng-binding';
-                    salattd4[0].className ='righttableblue ng-binding';
-                    salattd5[0].className ='righttableblue ng-binding';
-                    salattd6[0].className ='righttableblue ng-binding';
-                    timecell[0].className = 'topbarblue ng-binding';
-                    datecell[0].className = 'topbarblue ng-binding';
-            }
-            else if(img == 'bg7')
+            else if(img == 'bg5')
             {
                     timecell[0].className = 'topbarbrown ng-binding';
                     datecell[0].className = 'topbarbrown ng-binding';
@@ -243,30 +228,6 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     salattd4[0].className ='righttable ng-binding';
                     salattd5[0].className ='righttable ng-binding';
                     salattd6[0].className ='righttable ng-binding';
-
-            }
-            else if(img == 'bg9')
-            {
-
-                    salattd1[0].className ='righttableblue ng-binding';
-                    salattd4[0].className ='righttableblue ng-binding';
-            }
-            else if(img == 'bg12')
-            {
-                    salattd1[0].className ='righttablebrown ng-binding';
-                    salattd2[0].className ='righttablebrown ng-binding';
-                    salattd3[0].className ='righttablebrown ng-binding';
-                    salattd4[0].className ='righttablebrown ng-binding';
-                    salattd5[0].className ='righttablebrown ng-binding';
-                    salattd6[0].className ='righttablebrown ng-binding';
-                       }
-
-            else if(img == 'bg14')
-            {
-                    salattd1[0].className ='righttablered ng-binding';
-                    salattd2[0].className ='righttablered ng-binding';
-                    salattd4[0].className ='righttablered ng-binding';
-                    salattd5[0].className ='righttablered ng-binding';
 
             }
             else
@@ -279,12 +240,10 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     salattd6[0].className ='righttable ng-binding';
                     timecell[0].className = 'topbar ng-binding';
                     datecell[0].className = 'topbar  ng-binding';
-
-                    
             }
                 
 
-        }, 10000);
+        }, 1800000);
     
     var start = $interval(function($scope)
     {

@@ -34,6 +34,14 @@ td.topbarbrown
     color: #663300;
 }
 
+td.topbargreen
+{
+    border-bottom: 0px solid white;
+    font-size: 140px;
+    font-weight: bolder;
+    color: green;
+}
+
 
 td.righttable
 {
