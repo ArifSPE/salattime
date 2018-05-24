@@ -3,9 +3,9 @@ var config= {
   {
     "en": "Fajr",
     "ar": "فجر",
-    "adhan": "5:10",
-    "salat": "5:15",
-    "hr":"05:10"   
+    "adhan": "4:30",
+    "salat": "4:45",
+    "hr":"04:30"   
   }
   ,
   "duhr":
@@ -38,16 +38,18 @@ var config= {
   {
     "en": "Isha",
     "ar": "عشاء",
-    "adhan": "8:45",
-    "salat": "9:00",
-    "hr":"20:45"  
+    "adhan": "9:15",
+    "salat": "9:30",
+    "hr":"21:30"  
   }
 };
+
 var jummah={
     "adhan" : "1:15",
     "khutbah" : "1:30",
     "khateebh" : "Imman Salam"
 };
+
 var loc=
 {
         lat: "33.845633",
