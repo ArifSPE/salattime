@@ -4,9 +4,9 @@
 
 }
 #container {
-	width:1900px;
+    width:1920px;
 	height:1080px;
-	border-spacing:0px;
+    border-spacing:0px;
     <!--background: #005000;-->
 }
 
@@ -116,6 +116,18 @@ p.salatlabel {
 	opacity: .7;
 	color: black;
 }
+
+p.salatlabel1 {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: white;
+	opacity: .7;
+	color: black;
+}
+
 
 p.attention
 {

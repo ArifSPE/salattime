@@ -243,7 +243,29 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
             }
                 
 
-        }, 1800000);
+        }, 1000 * 300);
+    
+    var slidenumber = 1;
+    var jummahSalat = $interval(function($scope){
+            var contentcell = angular.element(document).find('#content');
+        var html='';
+        if(slidenumber == 1)
+        {    
+            html = '<p class="salatlabel1">Jummah</p>'+'<p class="salatlabel1">Adhan:'+$window.jummah.adhan+'</p><p class="salatlabel1">Khutbah:'+$window.jummah.khutbah+'</p><p class="salatlabel1">Khateeb '+$window.jummah.khateebh+'</p';
+            slidenumber++
+        }
+        else
+        {
+            html = '<p class="salatlabel">Attention !!!</p><img src="static/images/cell2.png" height="625px">';
+            slidenumber = 1;
+        }
+            contentcell[0].innerHTML = html;
+             $timeout(function(){
+                    var contentcell = angular.element(document).find('#content');
+                contentcell[0].innerHTML='';
+            }, 1000 * 30);
+        
+    }, 1000 * 60);
     
     var start = $interval(function($scope)
     {

@@ -43,6 +43,11 @@ var config= {
     "hr":"20:45"  
   }
 };
+var jummah={
+    "adhan" : "1:15",
+    "khutbah" : "1:30",
+    "khateebh" : "Imman Salam"
+};
 var loc=
 {
         lat: "33.845633",
