@@ -269,6 +269,17 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
 
                     var currentTime = (hours + ':' + minutes);
                     console.log(currentTime);
+                    var time = MyService.calculateTimes($window);
+                    var sunsetstring = time.maghrib;
+                    var fullsalattime = sunsetstring.substring(0,sunsetstring.length-3);
+                    var splitfullsalattime = fullsalattime.split(":");
+                    if( hours >= 1 && hours <23)
+                    {
+                          splitfullsalattime[0] = Number(splitfullsalattime[0]) + 12;
+                    }
+                    var maghribsalattime = splitfullsalattime[0]+':'+splitfullsalattime[1];
+
+
                     if(currentTime>$window.config.fajr.hr  && currentTime <= $window.config.duhr.hr)
                     {
                         nextSalatNumber = 2;
@@ -277,11 +288,11 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     {
                         nextSalatNumber = 3;
                     }
-                    if(currentTime > $window.config.asr.hr && currentTime < $scope.maghribsalattime)
+                    if(currentTime > $window.config.asr.hr && currentTime < maghribsalattime)
                     {
                         nextSalatNumber = 4;    
                     }
-                    if(currentTime > $scope.maghribsalattime && currentTime < $window.config.isha.hr)
+                    if(currentTime > maghribsalattime && currentTime < $window.config.isha.hr)
                     {
                         nextSalatNumber = 5;
                     }
@@ -309,7 +320,7 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                         var time = MyService.calculateTimes($window);
                         var sunsetstring = time.maghrib;
                         var maghribsalattime = sunsetstring.substring(0,sunsetstring.length-3);
-                        html = '<p class="salatlabel1">Next:'+$window.config.maghrib.en+'</p>'+'<p class="salatlabel1">Adhan:'+maghribsalattime+'</p><p class="salatlabel1">Iqamah: +7 Min</p>'; 
+                        html = '<p class="salatlabel1">Next:'+$window.config.maghrib.en+'</p>'+'<p class="salatlabel1">'+maghribsalattime+'</p><p class="salatlabel1">+7 Min</p>';
                     }
                     if(nextSalatNumber==5)
                     {
