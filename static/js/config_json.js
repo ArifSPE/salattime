@@ -45,8 +45,8 @@ var config= {
 };
 
 var jummah={
-    "adhan" : "1:15",
-    "khutbah" : "1:30",
+    "iqamah" : "1:40",
+    "khutbah" : "1:10",
     "khateebh" : "Imman Salam"
 };
 

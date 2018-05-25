@@ -12,8 +12,8 @@ body
 
 }
 #container {
-    width:1920px;
-	height:1080px;
+    width:1900px;
+	height:1050px;
     border-spacing:0px;
     <!--background: #005000;-->
 }
@@ -118,6 +118,8 @@ td.bottombar
 }
 
 p.salatlabel {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
     display: block;
     margin-top: 0;
     margin-bottom: 0;
@@ -129,6 +131,8 @@ p.salatlabel {
 }
 
 p.salatlabel1 {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
     display: block;
     margin-top: 0;
     margin-bottom: 0;
@@ -143,6 +147,8 @@ p.salatlabel1 {
 
 p.attention
 {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
     display: block;
     margin-top: 0;
     margin-bottom: 0;
@@ -154,5 +160,19 @@ p.attention
     font-size: 100px;
 }
 
+p.khateeb
+{
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: green;
+	opacity: .7;
+	color: white;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+
+}
 
 </style>

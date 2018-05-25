@@ -252,7 +252,7 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
         var html='';
         if(slidenumber == 1)
         {    
-            html = '<p class="salatlabel1">Jummah</p>'+'<p class="salatlabel1">Adhan:'+$window.jummah.adhan+'</p><p class="salatlabel1">Khutbah:'+$window.jummah.khutbah+'</p><p class="salatlabel1">Khateeb '+$window.jummah.khateebh+'</p>';
+            html = '<p class="salatlabel1">Jummah</p>'+'<p class="salatlabel1">Khutbah:'+$window.jummah.khutbah+'</p><p class="salatlabel1">Iqama:'+$window.jummah.iqamah+'</p><p class="khateeb">Khateeb '+$window.jummah.khateebh+'</p>';
             slidenumber++
         }
         else if(slidenumber==2)
@@ -264,6 +264,10 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
         {
                     var hours = new Date().getHours();
 		            var minutes = new Date().getMinutes();
+                    var day = new Date().getDay();
+
+                    console.log(day);
+
                     if (minutes >= 0 && minutes <= 9)
                         minutes = '0'+minutes;
 
@@ -307,7 +311,7 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
                     {
                         html = '<p class="salatlabel1"> Next:'+$window.config.fajr.en+'</p>'+'<p class="salatlabel1">Adhan:'+$window.config.fajr.adhan+'</p><p class="salatlabel1">Iqamah:'+$window.config.fajr.salat+'</p>'; 
                     }
-                    if(nextSalatNumber == 2)
+                    if(nextSalatNumber == 2 && day != 5)
                     {
                     html = '<p class="salatlabel1"> Next:'+$window.config.duhr.en+'</p>'+'<p class="salatlabel1">Adhan:'+$window.config.duhr.adhan+'</p><p class="salatlabel1">Iqamah:'+$window.config.duhr.salat+'</p>'; 
                     }
