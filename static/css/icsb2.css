@@ -1,0 +1,122 @@
+
+.container {
+    overflow:auto;
+
+}
+#container {
+    width:1900px;
+	height:1050px;
+    border-spacing:0px;
+    <!--background: #005000;-->
+}
+
+td.topbar
+{
+    border-bottom: 0px solid white;
+    font-size: 130px;
+    font-weight: bolder;
+	color: antiquewhite;
+    <!--border-bottom: 3px solid white;
+    border-top: 3px solid white;-->
+}
+
+
+div.salatdiv {
+	border: 2px solid #a1a1a1;
+    padding: 5px 40px;
+    background: #08578c;
+    width: 300px;
+    border-radius: 25px;
+    overflow:hidden;
+    font-size: 80px;
+    font-weight: bolder;
+	color: white;
+    text-align: center;
+
+}
+
+div.contentdiv {
+	border: 2px solid #a1a1a1;
+    padding: 5px 40px;
+    background: #08578c;
+    border-radius: 25px;
+    overflow:hidden;
+    font-size: 80px;
+    font-weight: bolder;
+	color: white;
+    opacity: .7;
+    text-align: center;
+}
+
+p.salatlabel {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+	opacity: .7;
+	color: white;
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+p.salatlabel1 {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+	opacity: .7;
+	color: white;
+    font-size: 30px;
+}
+
+.example1 {
+ height: 100%;
+ width: 100%;
+ overflow: hidden;
+ position: relative;
+}
+
+.example1 h3 {
+ font-size: 7em;
+ color: white;
+ position: relative ;
+ width: 100%;
+ height: 100%;
+ margin-top:  10px;
+ margin-bottom: 0;
+ line-height: 150px;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ -moz-animation: example1 15s linear infinite;
+ -webkit-animation: example1 15s linear infinite;
+  animation: example1 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes example1 {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes example1 {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes example1 {
+ 0%   {
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%);
+ }
+ 100% {
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%);
+ }
+}
+
+
