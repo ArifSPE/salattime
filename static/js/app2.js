@@ -185,8 +185,6 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
         $timeout(changemonthlabel,10000);
 
 
-        var imageseq = 1;
-
     var slidenumber = 1;
     var nextSalatNumber = 1;
     var jummahSalat = $interval(function($scope){
@@ -201,6 +199,42 @@ app.controller('dateCtrl', function($scope, $timeout, $window, MyService, $inter
         {
             html = '<p class="salatlabel">Attention !!!</p><img src="static/images/cell2.png" height="625px">';
             slidenumber++;
+        }
+        else if(slidenumber==3)
+        {
+            var text= 'Allah is With Those Who Offer Namaz and Stay Patient '+
+            '“O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient.” (2:153)';
+            html = '<div class="contentdiv1"><img style="background-color: white; border-radius: 25px;" src="static/images/Quran-2_153.png"><br>'+text+'</div>';
+            slidenumber++;
+
+        }
+        else if(slidenumber == 4)
+        {
+            var text='“Indeed, those who believe and do righteous deeds and establish prayer and give zakah will have their reward with their Lord, and there will be no fear concerning them, nor will they grieve.” (2:277)' ;
+            html = '<div class="contentdiv1"><img style="background-color: white; border-radius: 25px;" src="static/images/Quran-2_277.png"><br>'+text+'</div>';
+            slidenumber++;
+
+        }
+        else if(slidenumber == 5)
+        {
+            var text='And when you have completed the prayer, remember Allah standing, sitting, or [lying] on your sides. But when you become secure, re-establish [regular] prayer. Indeed, prayer has been decreed upon the believers a decree of specified times. (4:103)';
+            html = '<div class="contentdiv1"><img style="background-color: white; border-radius: 25px;" src="static/images/Quran-4_103.png"><br>'+text+'</div>';
+            slidenumber++;
+
+        }
+        else if(slidenumber == 6)
+        {
+            var text = 'Satan only wants to cause between you animosity and hatred through intoxicants and gambling and to avert you from the remembrance of Allah and from prayer. So will you not desist? (5:91)';
+            html = '<div class="contentdiv1"><img style="background-color: white; border-radius: 25px;" src="static/images/Quran-5_91.png"><br>'+text+'</div>';
+            slidenumber++;
+
+        }
+        else if (slidenumber = 7)
+        {
+            var text='Recite, [O Muhammad], what has been revealed to you of the Book and establish prayer. Indeed, prayer prohibits immorality and wrongdoing, and the remembrance of Allah is greater. And Allah knows that which you do. (29:45)';
+            html = '<div class="contentdiv1"><img style="background-color: white; border-radius: 25px;" src="static/images/Quran-29_45.png"><br>'+text+'</div>';
+            slidenumber++;
+
         }
         else
         {

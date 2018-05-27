@@ -16,8 +16,6 @@ td.topbar
     font-size: 130px;
     font-weight: bolder;
 	color: antiquewhite;
-    <!--border-bottom: 3px solid white;
-    border-top: 3px solid white;-->
 }
 
 
@@ -47,6 +45,20 @@ div.contentdiv {
     opacity: .7;
     text-align: center;
 }
+
+div.contentdiv1 {
+	border: 2px solid #a1a1a1;
+    padding: 5px 40px;
+    background: #08578c;
+    border-radius: 25px;
+    overflow:hidden;
+    font-size: 60px;
+    font-weight: bolder;
+	color: white;
+    opacity: .7;
+    text-align: center;
+}
+
 
 p.salatlabel {
     display: block;
